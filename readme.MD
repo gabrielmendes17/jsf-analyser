@@ -48,6 +48,7 @@ It includes a modern UI with theme toggling (light/dark), runs synchronously, an
 ## 🧪 Running Locally (WildFly 10)
 
 ### Prerequisites
+
 - Java 8
 - Maven
 - WildFly 10+
@@ -64,10 +65,6 @@ mvn clean package
 
 # Deploy to WildFly (copy WAR)
 cp target/jsfanalyzer.war $WILDFLY_HOME/standalone/deployments/
-
-Absolutely! Here’s a complete README.md for your JSF Sentence Analyzer application, tailored for developers and reviewers:
-
-⸻
 
 
 # 📝 JSF Sentence Analyzer
