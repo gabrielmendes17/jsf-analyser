@@ -1,0 +1,32 @@
+body.dark {
+    background-color: #2e2e2e; /* Cinza escuro claro */
+    color: #f0f0f0;
+}
+
+body.dark .ui-panel,
+body.dark .ui-inputtextarea,
+body.dark .ui-button,
+body.dark .ui-panel-content {
+    background-color: #3b3b3b;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body.dark .ui-inputtextarea {
+    border: 1px solid #777;
+}
+
+body.dark .ui-button {
+    background-color: #4a4a4a;
+    color: #fff;
+    border: 1px solid #888;
+}
+
+body.dark .ui-button:hover {
+    background-color: #5a5a5a;
+}
+
+body.dark .ui-badge {
+    background-color: #666;
+    color: #fff;
+}

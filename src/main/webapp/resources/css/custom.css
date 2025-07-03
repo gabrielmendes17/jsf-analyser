@@ -1,0 +1,18 @@
+.distinct-count {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #3f51b5;
+}
+
+.word-table .ui-badge {
+    font-size: 1rem;
+}
+
+.tag-word {
+    display: inline-block;
+    background-color: #d1eaff;
+    color: #003366;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}

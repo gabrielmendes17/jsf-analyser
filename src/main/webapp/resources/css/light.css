@@ -1,0 +1,19 @@
+body.light {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.light .ui-panel, .light .ui-datatable, .light .ui-inputtextarea {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.light .word {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin: 2px;
+    display: inline-block;
+}

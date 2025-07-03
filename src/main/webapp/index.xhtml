@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <title>JSF Analyzer</title>
+
+    <!-- Stylesheets -->
+    <h:outputStylesheet library="css" name="light.css" />
+    <h:outputStylesheet library="css" name="dark.css" />
+
+    <!-- Toggle Theme Script -->
+    <h:outputScript target="head">
+        function toggleTheme() {
+            const body = document.body;
+            if (body.classList.contains('light')) {
+                body.classList.remove('light');
+                body.classList.add('dark');
+            } else {
+                body.classList.remove('dark');
+                body.classList.add('light');
+            }
+        }
+
+        window.onload = function () {
+            const body = document.body;
+            if (!body.classList.contains('light') &amp;&amp; !body.classList.contains('dark')) {
+                body.classList.add('light'); // default theme
+            }
+        }
+    </h:outputScript>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:commandButton value="🌗 Toggle Theme" onclick="toggleTheme(); return false;" />
+        <br/><br/>
+
+        <p:panel header="Sentence Analysis">
+            <p:inputTextarea value="#{analyzerBean.sentence}" rows="5" cols="50" autoResize="false"/>
+            <br/><br/>
+            <p:commandButton value="Analyze" action="#{analyzerBean.analyze}" update="resultPanel"/>
+        </p:panel>
+
+        <p:messages autoUpdate="true" showDetail="true" closable="true"/>
+
+        <p:outputPanel id="resultPanel">
+            <p:panel rendered="#{not empty analyzerBean.result.frequencies}">
+                <h:outputText value="Distinct word count: #{analyzerBean.result.distinctWordCount}" />
+                <br/><br/>
+
+                <div class="word-list">
+                    <ui:repeat value="#{analyzerBean.result.frequencies.entrySet().toArray()}" var="item">
+                        <h:outputText value="#{item.key} (#{item.value})"
+                                      styleClass="custom-badge"
+                                      style="background-color: #007bff; color: white; padding: 4px 8px; border-radius: 12px; margin-right: 8px; display: inline-block;" />
+                    </ui:repeat>
+                </div>
+            </p:panel>
+        </p:outputPanel>
+    </h:form>
+</h:body>
+</html>
